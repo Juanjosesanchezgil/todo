@@ -5,6 +5,7 @@ dist/
 bin/
 out/
 target/
+.venv/
 
 # Ignorar archivos de sistema
 .DS_Store
@@ -18,6 +19,7 @@ Thumbs.db
 # Ignora todos los archivos .env (habituales para variables de entorno)
 .env
 
+
 # Ignorar tipos específicos
 *.pyc
 *.class
@@ -30,3 +32,4 @@ Thumbs.db
 # Ejemplo de negación: ignora todos los .txt excepto readme.txt
 *.txt
 !readme.txt
+!requirements.txt
