@@ -1,0 +1,32 @@
+# Ignorar carpetas típicas de dependencias y compilación
+node_modules/
+build/
+dist/
+bin/
+out/
+target/
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales o de lock
+*.log
+*.tmp
+*.lock
+
+# Ignora todos los archivos .env (habituales para variables de entorno)
+.env
+
+# Ignorar tipos específicos
+*.pyc
+*.class
+
+# Ignorar archivos de configuración de editores
+.vscode/
+*.sublime-workspace
+.idea/
+
+# Ejemplo de negación: ignora todos los .txt excepto readme.txt
+*.txt
+!readme.txt
