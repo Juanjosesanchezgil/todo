@@ -1,10 +1,15 @@
 from fastapi import FastAPI
-from app.v1.router.router_list import router as tasks_router
+from router.router_db import create_db_and_tables, router as tasks_router
 
 
 app = FastAPI()
 
 app.include_router(tasks_router)
+
+
+@app.on_event("startup")
+def on_startup():
+    create_db_and_tables()
 
 
 @app.get("/")
