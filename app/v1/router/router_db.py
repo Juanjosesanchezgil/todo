@@ -45,3 +45,27 @@ def create_task(task: Task, session: SessionDep) -> Task:
     session.commit()
     session.refresh(task)
     return task
+
+
+@router.put("/{task_id}")
+def update_task(task_id: int, update_task: Task, session: SessionDep):
+    filter = select(Task).where(Task.id == task_id)
+    result = session.exec(filter)
+    task = result.one()
+    print(task)
+    session.add(update_task)
+    session.commit()
+    session.refresh(update_task)
+    
+    # if task is not None:
+    #     session.add(update_task)
+    #     session.commit()
+    #     session.refresh(update_task)
+
+
+@router.delete("/{task_id}")
+def detete_task(task_id: int, session: SessionDep):
+    task = session.get(Task, task_id)
+    session.delete(task)
+    session.commit()
+    return task
